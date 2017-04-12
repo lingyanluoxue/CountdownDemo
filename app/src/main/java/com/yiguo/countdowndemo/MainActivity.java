@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         now = (int) (System.currentTimeMillis()/1000);
         CountdownTime.onTimeCountdownOverListener = new CountdownTime.OnTimeCountdownOverListener() {
             @Override
-            public void onTimeCountdownOver() {
+            public void onTimeCountdownOver(String id) {
                 Log.d("Blin QueueMangerOver","回调了");
             }
         };

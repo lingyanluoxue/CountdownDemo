@@ -37,7 +37,7 @@ public class CountdownTime extends BaseCountdownTime {
         if(seconds == 0){
             if(onTimeCountdownOverListener != null){
                 Log.d("Blin CountdownOver","倒计时结束id:"+id);
-                onTimeCountdownOverListener.onTimeCountdownOver();
+                onTimeCountdownOverListener.onTimeCountdownOver(id);
             }
             CountdownTimeQueueManager.getInstance().removeTime(this);
             listener.onCountdownTimeDraw(this);
@@ -98,7 +98,7 @@ public class CountdownTime extends BaseCountdownTime {
         void onCountdownTimeDraw(CountdownTime time);
     }
     public interface OnTimeCountdownOverListener{
-        void onTimeCountdownOver();
+        void onTimeCountdownOver(String id);
     }
     /**
      * 这个真的不是我想这样做，没办法，item不展示的时候也要回调，那就索性简单粗暴点
